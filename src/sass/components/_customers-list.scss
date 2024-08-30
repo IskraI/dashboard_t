@@ -1,0 +1,227 @@
+.hello-header {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #000;
+  margin-bottom: 71px;
+}
+.customers-list__desktop {
+  width: 968px;
+  height: 812px;
+  margin-bottom: 258px;
+
+  background-color: #ffffff;
+  border-radius: 30px;
+}
+
+.customers-list-header__desc {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.customers-list-header__main {
+  font-size: 22px;
+  letter-spacing: -0.22px;
+  font-weight: 600;
+}
+.customers-list-header__span {
+  font-size: 14px;
+  letter-spacing: -0.14px;
+  color: #16c098;
+  font-weight: 400;
+}
+.customer-table {
+  width: 100%;
+  margin-bottom: 32px;
+  font-size: 14px;
+  font-weight: 500;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+  color: #b5b7c0;
+  font-weight: 500;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 14px 0 14px 0;
+}
+th:first-child,
+td:first-child {
+  padding-left: 38px;
+}
+th:not(:first-child),
+td:not(:first-child) {
+  padding-left: 19px;
+}
+th:last-child {
+  padding-right: 70px;
+}
+td:last-child {
+  padding-right: 44px;
+  padding-left: 12px;
+}
+.customer-table th:nth-child(1),
+.customer-table td:nth-child(1) {
+  width: 184px; /* Ширина первой колонки */
+}
+
+.customer-table th:nth-child(2),
+.customer-table td:nth-child(2) {
+  width: 128px; /* Ширина второй колонки */
+}
+
+.customer-table th:nth-child(3),
+.customer-table td:nth-child(3) {
+  width: 152px; /* Ширина третьей колонки */
+}
+
+.customer-table th:nth-child(4),
+.customer-table td:nth-child(4) {
+  width: 219px; /* Ширина четвертой колонки */
+}
+
+.customer-table th:nth-child(5),
+.customer-table td:nth-child(5) {
+  width: 142px; /* Ширина пятой колонки */
+}
+
+.customer-table th:nth-child(6),
+.customer-table td:nth-child(6) {
+  width: 143px; /* Ширина шестой колонки */
+}
+.customer-table td:nth-child(6) {
+  text-align: center;
+}
+.customer-table td {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 50px;
+}
+th,
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.customer-list_status_false {
+  display: inline-block;
+  padding: 4px;
+  border: 1px solid #df0404;
+  border-radius: 4px;
+  background-color: #ffc5c5;
+  color: #df0404;
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+.customer-list_status_true {
+  display: inline-block;
+  padding: 4px;
+  border: 1px solid #00b087;
+  border-radius: 4px;
+  background-color: rgb(22, 192, 152, 0.38);
+  color: #00b087;
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.customers-list_help {
+  display: flex;
+  align-items: center;
+  padding-left: 38px;
+  padding-right: 40px;
+}
+.customers-list_info {
+  color: #b5b7c0;
+  font-size: 14px;
+  font-weight: 500;
+}
+//Пагинация
+.tui-pagination.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 0 auto;
+  // width: 323px;
+  height: 38px;
+  padding: 0px;
+}
+
+.tui-page-btn {
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  color: #404b52;
+  background-color: #f5f5f5;
+  vertical-align: middle;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.tui-pagination.pagination .tui-page-btn:hover {
+  background-color: #5932ea; /* Цвет фона при наведении */
+  color: #ffffff; /* Цвет текста при наведении */
+}
+.tui-pagination.pagination .tui-page-btn.tui-first.tui-is-disabled,
+.tui-pagination.pagination .tui-page-btn.tui-prev.tui-is-disabled,
+.tui-pagination.pagination .tui-page-btn.tui-next.tui-is-disabled,
+.tui-pagination.pagination .tui-page-btn.tui-last.tui-is-disabled,
+.tui-pagination.pagination .tui-page-btn.tui-is-selected {
+  color: #ffffff;
+  background-color: #5932ea;
+}
+
+.tui-pagination.pagination .tui-ico-ellip {
+  margin-top: 12px;
+}
+.tui-page-btn.tui-prev,
+.tui-page-btn.tui-next {
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  color: #404b52;
+  border: #f5f5f5;
+  padding: 6px;
+  vertical-align: middle;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+}
+.customers-list-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 38px 40px; /* Упрощение записи padding */
+}
+
+.search-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.customers-list-header__search {
+  padding: 7px 8px;
+  border-radius: 10px;
+  margin-right: 10px;
+  align-self: flex-start;
+  background-color: #f9fbff;
+  border: 1px solid #e7e7e7; /* Добавить стиль границы */
+  color: #b5b7c0;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.12px;
+  padding-left: 40px; /* Отступ для иконки внутри поля ввода */
+}
+
+.search-icon {
+  position: absolute;
+  top: 30%;
+
+  left: 10px; /* Расположение иконки внутри поля ввода */
+  transform: translateY(-50%);
+  pointer-events: none; /* Чтобы клики по иконке не мешали вводу текста */
+}

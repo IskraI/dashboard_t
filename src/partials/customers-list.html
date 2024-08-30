@@ -1,0 +1,42 @@
+<section class="section">
+  <h2 class="hello-header"></h2>
+  <div class="customers-list__container">
+    <div class="customers-list__desktop">
+      <div class="customers-list-header">
+        <div class="customers-list-header__title">
+          <h2 class="customers-list-header__desc">
+            <span class="customers-list-header__main">All Customers</span>
+            <span class="customers-list-header__span">Active Members</span>
+          </h2>
+        </div>
+
+        <div class="search-wrapper">
+          <input
+            class="customers-list-header__search"
+            type="text"
+            placeholder="Search"
+          />
+          <svg class="search-icon" width="24" height="24">
+            <use href="./images/sprite.svg#icon-search"></use>
+          </svg>
+        </div>
+      </div>
+      <!-- Empty list - default -->
+      <!-- <div class="customers-list__empty">
+        <p class="customers-list__text">
+          This page is empty, add some Customers and proceed to order.
+        </p>
+      </div> -->
+
+      <div class="customers-list__not-empty">
+        <div class="customers-list-table"></div>
+        <!-- Таблиця клієнтів -->
+        <div class="customers-list_help">
+          <div class="customers-list_info"></div>
+          <div id="pagination" class="tui-pagination pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Pagination -->
+</section>

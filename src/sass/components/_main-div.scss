@@ -1,0 +1,16 @@
+.main-div {
+  //   margin-right: 40px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 1280px) {
+    display: flex;
+  }
+
+  @include _mobile {
+    max-width: 767px;
+  }
+
+  @include _desktop {
+    max-width: 1440px;
+  }
+}
