@@ -78,5 +78,36 @@
       </ul>
     </nav>
     <div class="user-card"></div>
+    <button
+      class="menu-toggle js-open-menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      name="mobile menu"
+    >
+      <svg class="burger-icon" width="32" height="32">
+        <use href="./images/sprite.svg#icon-burger-menu"></use>
+      </svg>
+    </button>
   </aside>
+  <!-- Burger menu -->
+  <div class="menu-container js-menu-container" id="mobile-menu">
+    <a href="./index.html" class="logo burger-menu__logo">
+      <svg class="logo_icon" width="37" height="37">
+        <use href="./images/sprite.svg#icon-logo"></use>
+      </svg>
+    </a>
+    <button class="menu-toggle js-close-menu" name="menu close">
+      <svg class="menu-close-icon" width="32" height="32">
+        <use href="./images/sprite.svg#icon-chevron-right-2"></use>
+      </svg>
+    </button>
+    <ul class="burger-menu__list">
+      <li class="burger-menu__item">
+        <a href="./index.html" class="burger-menu__link">Dashboard</a>
+      </li>
+      <li class="burger-menu__item">
+        <a href="./customers.html" class="burger-menu__link">Customers</a>
+      </li>
+    </ul>
+  </div>
 </section>

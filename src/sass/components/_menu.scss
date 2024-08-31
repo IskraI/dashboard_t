@@ -1,0 +1,164 @@
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  background-color: #e7e7e7;
+  z-index: 99;
+  overflow-y: scroll;
+
+  transform: translateX(200%);
+
+  //   @include transition(transform);
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  @media (min-width: 768px) {
+    top: 32px;
+    right: 32px;
+  }
+}
+
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  padding: 0;
+  fill: $page-color-accent;
+  stroke: $page-color-accent;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  //   @include transition();
+
+  @include _desktop {
+    display: none;
+  }
+}
+
+.burger-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 51px;
+  @media (min-width: 768px) {
+    margin-top: 76px;
+  }
+}
+
+.burger-menu__link {
+  display: block;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.219;
+  color: #000;
+
+  @media (min-width: 768px) {
+    font-size: 48px;
+    line-height: 1.23;
+  }
+
+  &:hover,
+  &:focus {
+    color: black;
+  }
+}
+
+.burger-menu__item {
+  margin-bottom: 32px;
+  @media (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+.burger-menu__logo {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  @media (min-width: 768px) {
+    top: 20px;
+    left: 32px;
+  }
+}
+.menu-btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 12px 36px;
+  max-width: 152px;
+
+  background-color: blue;
+
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.214;
+
+  text-decoration: none;
+
+  //   @include transition(background-color);
+  // @include transition();
+
+  &:hover {
+    color: black;
+    background-color: blue;
+    outline: none;
+  }
+
+  &:hover .btn-arrow-svg {
+    fill: black;
+  }
+
+  &:focus {
+    color: white;
+    background-color: brown;
+    outline: none;
+  }
+
+  &:focus .btn-arrow-svg {
+    fill: white;
+  }
+}
+
+.btn-arrow-svg {
+  margin-left: 4px;
+  fill: black;
+
+  //   @include transition(fill);
+}
+
+.menu-btn.header__btn {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-left: 32px;
+    margin-right: 0;
+  }
+  @media screen and (min-width: 1200px) {
+    margin: 0;
+  }
+}
+
+.menu-btn.burger-menu__btn {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}

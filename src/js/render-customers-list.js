@@ -52,7 +52,7 @@ handleRenderCustomerTable();
 const paginationOptions = {
   totalItems: totalItems, // Загальна кількість елементів
   itemsPerPage: limit, // Кількість елементів на сторінку
-  visiblePages: 5,
+  visiblePages: 3,
   page: 1, // Початкова сторінка
   centerAlign: true,
   firstItemClassName: 'tui-first-child',

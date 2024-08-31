@@ -1,4 +1,23 @@
 .section {
   flex-grow: 1;
-  padding: 41px 95px 0 71px;
+  padding: 8px;
+  @include _desktop {
+    padding: 41px 95px 0 71px;
+  }
+}
+
+.main-div {
+  margin: 0 auto;
+
+  @media screen and (min-width: 1280px) {
+    display: flex;
+  }
+
+  @include _mobile {
+    max-width: 767px;
+  }
+
+  @include _desktop {
+    max-width: 1440px;
+  }
 }

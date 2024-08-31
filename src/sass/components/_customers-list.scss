@@ -6,11 +6,15 @@
   margin-bottom: 71px;
 }
 .customers-list__desktop {
-  width: 968px;
-  height: 812px;
-  margin-bottom: 258px;
+  width: 100%; /* Default to 100% width for mobile and tablet screens */
+  max-width: 100%;
+  @media screen and (min-width: 1280px) {
+    width: 968px; /* Fixed width for desktop screens */
+    margin: 0 auto; /* Center the table horizontally */
+    height: 812px;
+  }
 
-  background-color: #ffffff;
+  background-color: $page-color-light;
   border-radius: 30px;
 }
 
@@ -40,9 +44,9 @@
 }
 th {
   text-align: left;
-  color: #b5b7c0;
+  color: $page-color-second;
   font-weight: 500;
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 2px solid $bcg-color;
   padding: 14px 0 14px 0;
 }
 th:first-child,
@@ -136,9 +140,30 @@ td {
   padding-right: 40px;
 }
 .customers-list_info {
-  color: #b5b7c0;
+  color: $page-color-second;
   font-size: 14px;
   font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .customer-table td:nth-child(3),
+  .customer-table th:nth-child(3),
+  .customer-table td:nth-child(4),
+  .customer-table th:nth-child(4),
+  .customer-table td:nth-child(5),
+  .customer-table th:nth-child(5),
+  .customer-table td:nth-child(2),
+  .customer-table th:nth-child(2) {
+    display: none;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .customer-table td:nth-child(3),
+  .customer-table th:nth-child(3),
+  .customer-table td:nth-child(2),
+  .customer-table th:nth-child(2) {
+    display: none;
+  }
 }
 //Пагинация
 .tui-pagination.pagination {
@@ -165,16 +190,16 @@ td {
 }
 
 .tui-pagination.pagination .tui-page-btn:hover {
-  background-color: #5932ea; /* Цвет фона при наведении */
-  color: #ffffff; /* Цвет текста при наведении */
+  background-color: $page-color-accent; /* Цвет фона при наведении */
+  color: $page-color-light; /* Цвет текста при наведении */
 }
 .tui-pagination.pagination .tui-page-btn.tui-first.tui-is-disabled,
 .tui-pagination.pagination .tui-page-btn.tui-prev.tui-is-disabled,
 .tui-pagination.pagination .tui-page-btn.tui-next.tui-is-disabled,
 .tui-pagination.pagination .tui-page-btn.tui-last.tui-is-disabled,
 .tui-pagination.pagination .tui-page-btn.tui-is-selected {
-  color: #ffffff;
-  background-color: #5932ea;
+  color: $page-color-light;
+  background-color: $page-color-accent;
 }
 
 .tui-pagination.pagination .tui-ico-ellip {
@@ -210,11 +235,16 @@ td {
   align-self: flex-start;
   background-color: #f9fbff;
   border: 1px solid #e7e7e7; /* Добавить стиль границы */
-  color: #b5b7c0;
+  color: $page-color-second;
   font-size: 12px;
   font-weight: 400;
   letter-spacing: -0.12px;
   padding-left: 40px; /* Отступ для иконки внутри поля ввода */
+  pointer-events: none;
+}
+.customers-list-header__search:focus {
+  outline: none;
+  border: 1px solid $page-color-accent;
 }
 
 .search-icon {

@@ -1,41 +1,51 @@
 .section-sidebar {
-  @media screen and (min-width: 375px) {
+  @include _mobile {
     display: flex;
     flex-direction: column;
+    min-width: 306px;
     align-items: center;
     background-color: #fff;
   }
 
-  @media screen and (min-width: 1280px) {
+  @include _desktop {
     display: block;
-    // flex-direction: column;
-    // justify-content: centre;
-    width: 306px;
-    height: 1198px;
+    max-width: 306px;
+    height: 100vh;
     padding: 36px 28px 0 28px;
   }
 }
 .sidebar {
   display: flex;
-  flex-direction: column;
-  height: 100%; /* Устанавливаем высоту контейнера на 100% */
+  padding: 0 12px;
+  @include _mobile {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  @include _desktop {
+    flex-direction: column;
+  }
 }
 
 /* Основные стили для ссылки */
 .logo {
   display: flex;
-  margin-bottom: 64px;
   align-items: center;
   text-decoration: none;
   color: #000; /* Цвет текста по умолчанию */
 }
 .logo-text {
-  color: #000;
-  font-size: 26px;
-  font-weight: 600;
-  text-shadow: 0 4px 4px rgb(0, 0, 0, 0.25);
-  letter-spacing: 0.01em;
-  -webkit-text-stroke: 1px black;
+  display: none;
+
+  @include _tablet {
+    display: inline-block;
+    color: #000;
+    font-size: 26px;
+    font-weight: 600;
+    text-shadow: 0 4px 4px rgb(0, 0, 0, 0.25);
+    letter-spacing: 0.01em;
+    -webkit-text-stroke: 1px black;
+  }
 }
 .logo-text__vers {
   font-size: 10px;
@@ -45,29 +55,34 @@
   padding-left: 4px;
 }
 
-/* Стили для иконки внутри ссылки */
 .logo .icon {
-  fill: #000; /* Цвет иконки по умолчанию */
-  transition: fill 0.3s ease; /* Плавный переход цвета */
+  fill: #000;
+  transition: fill 0.3s ease;
 }
 
-/* Стили для текста внутри ссылки */
 .logo .logo-text {
-  margin-left: 8px; /* Расстояние между иконкой и текстом */
-  transition: color 0.3s ease; /* Плавный переход цвета */
+  margin-left: 8px;
+  transition: color 0.3s ease;
 }
 
-/* Стили для состояния при наведении */
-.logo:hover .logo_icon {
-  fill: #5932ea; /* Цвет иконки при наведении */
-  // stroke: #5932ea;
+.logo:hover .logo_icon,
+.logo:focus .logo_icon {
+  fill: $page-color-accent;
 }
 
-.logo:hover .logo-text {
-  color: #5932ea; /* Цвет текста при наведении */
-  -webkit-text-stroke: 1px #5932ea;
+.logo:hover .logo-text,
+.logo:focus .logo-text {
+  color: $page-color-accent;
+  -webkit-text-stroke: 1px $page-color-accent;
 }
+.nav-menu {
+  display: none;
 
+  @include _desktop {
+    display: block;
+    padding-top: 64px;
+  }
+}
 .nav-menu__list {
   display: flex;
   flex-direction: column;
@@ -87,32 +102,36 @@
   color: #9197b3;
   letter-spacing: -0.14px;
 }
-.nav-menu__link:hover {
-  background-color: #5932ea;
+.nav-menu__link:hover,
+.nav-menu__link:hover focus {
+  background-color: $page-color-accent;
   color: #f9fbff;
-
-  /* Или другой эффект ховера */
 }
 .icon,
 .nav-menu__icon {
   stroke: #9197b3;
 }
-.icon:hover {
+.icon:hover,
+.icon:focus {
   stroke: #f9fbff;
 }
-/* Применяем ховер на весь li, когда наведен курсор на ссылку */
-.nav-menu__item:hover {
-  background-color: #5932ea;
+
+.nav-menu__item:hover,
+.nav-menu__item:focus {
+  background-color: $page-color-accent;
   color: #f9fbff;
-  border-radius: 12px; /* Стили ховера для всего li */
+  border-radius: 12px;
 }
-.nav-menu__item:hover .nav-menu__link {
-  color: #f9fbff; /* Выберите нужный цвет */
+.nav-menu__item:hover .nav-menu__link,
+.nav-menu__item:focus .nav-menu__link {
+  color: #f9fbff;
 }
-.nav-menu__item:hover .icon {
+.nav-menu__item:hover .icon,
+.nav-menu__item:focus .icon {
   stroke: #f9fbff;
 }
-.nav-menu__item:hover .nav-menu__icon {
+.nav-menu__item:hover .nav-menu__icon,
+.nav-menu__item:focus .nav-menu__icon {
   stroke: #f9fbff;
 }
 
@@ -123,20 +142,27 @@
   margin-left: auto;
 }
 .nav-menu__item.active {
-  background-color: #5932ea;
+  background-color: $page-color-accent;
   color: #fff;
   border-radius: 12px;
 }
 
 .nav-menu__item.active .nav-menu__link {
-  color: #fff; /* Изменяет цвет текста ссылки на белый */
+  color: #fff;
 }
 .user-card {
   display: flex;
   gap: 12px;
-  margin-bottom: 76px;
-  margin-top: auto;
+  padding: 18px 18px;
+
   align-items: center;
+  @include _desktop {
+    max-width: 306px;
+    height: 100vh;
+    padding: 76px 0;
+    margin-top: auto;
+  }
+
   .user-card__name {
     font-size: 14px;
     font-weight: 500;
@@ -158,12 +184,12 @@
 }
 .nav-menu__link.disabled {
   pointer-events: none; /* Отключает возможность клика */
-  color: #b5b7c0; /* Светлый цвет, чтобы показать, что ссылка неактивна */
-  cursor: not-allowed; /* Изменяет курсор на "запрещено" */
+  color: $page-color-second;
 }
-.nav-menu__item .nav-menu__link.disabled:hover {
-  /* При необходимости, можно указать дополнительные стили для hover на disabled ссылке */
-  background-color: transparent; /* Фон при наведении на неактивную ссылку */
-  color: #b5b7c0; /* Цвет текста при наведении */
-  cursor: not-allowed; /* Убедитесь, что курсор остается "запрещено" */
+.search-wrapper,
+.customers-list_info {
+  display: none;
+  @include _tablet {
+    display: block;
+  }
 }
